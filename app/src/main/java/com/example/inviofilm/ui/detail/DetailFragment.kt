@@ -4,7 +4,9 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.example.inviofilm.base.BaseFragment
 import com.example.inviofilm.databinding.FragmentDetailBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DetailFragment : BaseFragment<FragmentDetailBinding, DetailViewModel>(
     FragmentDetailBinding::inflate
 ) {

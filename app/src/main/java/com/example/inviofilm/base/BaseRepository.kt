@@ -1,6 +1,5 @@
 package com.example.inviofilm.base
 
-import android.util.Log
 import com.example.inviofilm.model.ErrorResponseModel
 import com.example.inviofilm.utils.NetworkResult
 import com.google.gson.Gson
@@ -18,11 +17,9 @@ abstract class BaseRepository {
             }catch (throwable:Throwable){
                 when(throwable){
                     is HttpException->{
-                        Log.e("yox","girdi")
                         NetworkResult.Error(false, errorParse(throwable.response()?.errorBody()?.toString()))
                     }
                     else->{
-                        Log.e("hata","girdi")
                         NetworkResult.Error(true,throwable.localizedMessage)
                     }
                 }
